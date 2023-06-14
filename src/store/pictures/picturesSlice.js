@@ -1,19 +1,20 @@
-// import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
-// const initialState = {
-//   pictures: [],
-//   pictureDetails: {},
-// };
+const initialState = {
+  pictures: [],
+  pictureDetails: {},
+};
 
-// export const createSlice = createSlice({
-//   name: "@pictures",
-//   initialState,
-//   reducers: {},
-//   extraReducers: (builder) => {
-//     builder.addCase(getUsers.fulfilled, (state, action) => {
-//       state.users = action.payload;
-//     });
-//   },
-// });
+export const pictureSlice = createSlice({
+  name: "@pictures",
+  initialState,
+  reducers: {
+    setPicture(state, action) {
+      state.pictures = action.payload;
+    },
+  },
+});
 
-// export const pictureReducer = createSlice.reducer;
+export const { setPicture } = pictureSlice.actions;
+
+export const pictureReducer = pictureSlice.reducer;
