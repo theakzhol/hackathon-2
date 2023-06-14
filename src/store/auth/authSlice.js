@@ -25,6 +25,9 @@ export const authSlice = createSlice({
       state.passwordError = "";
     },
     setUser(state, action) {
+      state.user = action.payload;
+    },
+    setEmail(state, action) {
       state.email = action.payload;
     },
     setPassword(state, action) {
@@ -51,6 +54,7 @@ export const {
   clearInputs,
   clearErrors,
   setUser,
+  setEmail,
   setPassword,
   setName,
   setSurname,

@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import "./register.css";
+import {
+  setEmail,
+  setName,
+  setPassword,
+  setSurname,
+} from "../../store/auth/authSlice";
+import { handleSignup } from "../../store/auth/authActions";
 
 const Register = () => {
   const { email, password, name, surname, emailError, passwordError } =
@@ -14,7 +21,7 @@ const Register = () => {
 
   const handleCreateUser = () => {
     if (!name.trim() || !surname.trim() || !email.trim() || !password.trim()) {
-      showError(true);
+      setShowError(true);
       return;
     }
 
@@ -25,6 +32,7 @@ const Register = () => {
       password,
       navigate,
     };
+    dispatch(handleSignup(objUser));
   };
 
   return (
@@ -36,13 +44,54 @@ const Register = () => {
         <p>Let's do this</p>
       </div>
       <div className="register-inputs">
-        <input type="text" placeholder="Name" />
-        <input type="text" placeholder="Surname" />
-        <input type="text" placeholder="Email" />
-        <input type="text" placeholder="Password" />
+        <input
+          type="text"
+          placeholder="Name"
+          value={name}
+          onChange={(e) => dispatch(setName(e.target.value))}
+        />
+        <input
+          type="text"
+          placeholder="Surname"
+          value={surname}
+          onChange={(e) => dispatch(setSurname(e.target.value))}
+        />
+        <input
+          type="text"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => dispatch(setEmail(e.target.value))}
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => dispatch(setPassword(e.target.value))}
+        />
+        {showError ? <p>Enter all inputs</p> : <></>}
+        {emailError && (
+          <div
+            style={{
+              width: "30%",
+              textAlign: "center",
+            }}
+          >
+            <p>{emailError}</p>
+          </div>
+        )}
+        {passwordError && (
+          <div
+            style={{
+              width: "30%",
+              textAlign: "center",
+            }}
+          >
+            <p>{passwordError}</p>
+          </div>
+        )}
       </div>
       <div className="register-btn">
-        <button onClick={() => navigate("/")}>JOIN</button>
+        <button onClick={handleCreateUser}>JOIN</button>
       </div>
     </div>
   );
