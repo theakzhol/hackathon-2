@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
-import "./home.css";
+import "../Home/home.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getPictures } from "../../store/pictures/picturesActions";
 import { useNavigate } from "react-router-dom";
-import ProductList from "../ProductList/ProducList";
+import ProductCard from "../ProductCard/ProductCard";
+import "../Favorite/favorite.css";
 
-const Home = () => {
+const ProductList = () => {
   const { pictures } = useSelector((state) => state.pictures);
   const dispatch = useDispatch();
 
@@ -15,15 +16,12 @@ const Home = () => {
   const naviget = useNavigate();
 
   return (
-    <div className="home-box">
-      <br />
-      <h1>Home</h1>
-      <br />
-      <br />
-      <br />
-      <ProductList />
+    <div className="img-box">
+      {pictures.map((item) => (
+        <ProductCard item={item} key={item.id} />
+      ))}
     </div>
   );
 };
 
-export default Home;
+export default ProductList;
