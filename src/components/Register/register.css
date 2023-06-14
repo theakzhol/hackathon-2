@@ -1,0 +1,80 @@
+.box-register {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.logo-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.logo-box > p {
+  font-size: 20px;
+  color: #fdfdfd;
+}
+
+.register-inputs {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.register-inputs > input {
+  width: 25%;
+  height: 40px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  outline: none;
+}
+
+.register-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-btn > button {
+  width: 25%;
+  background-color: #fdfdfd;
+  color: #050505;
+  border: none;
+  outline: none;
+  height: 50px;
+  border-radius: 50px;
+}
+
+.register-way {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 20%;
+}
+
+.register-way > p {
+  color: white;
+  transition: color 1s ease;
+  font-size: 20px;
+}
+
+.register-way > p:hover {
+  color: gray;
+  transition: color 1s ease;
+}
+
+.register-way > p:not(:hover) {
+  transition-duration: 1s;
+}

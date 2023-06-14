@@ -1,0 +1,47 @@
+.create-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.form-box {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.form-box > input {
+  width: 25%;
+  height: 45px;
+  border-radius: 25px;
+  color: white;
+  background: #171717;
+  outline: none;
+  border: none;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+  padding-left: 20px;
+}
+
+.create-btns {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 2rem 0 2rem 0;
+}
+
+.create-btns > button {
+  width: 13%;
+  height: 35px;
+  border: none;
+  outline: none;
+  background: #171717;
+  border-radius: 25px;
+}
