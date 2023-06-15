@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { getOnePicture } from "../../store/pictures/picturesActions";
 import "./details.css";
+import "./detailsSidebar";
 import { VscChromeClose } from "react-icons/vsc";
 
 const Details = () => {
@@ -18,12 +19,15 @@ const Details = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const openSidebar = () => {
-    setIsOpen(!false);
+    setIsOpen(!isOpen);
+    setSidebarStyle((prev) => !prev);
   };
 
+  const [sidebarStyle, setSidebarStyle] = useState(false);
+
   return (
-    <div className="details-box">
-      <div className="details-nav">
+    <>
+      <div className={`${sidebarStyle ? "details-nav-active" : "details-nav"}`}>
         <p>Details</p>
         <div className="details-item">
           <button className="details-save">SAVE</button>
@@ -35,12 +39,23 @@ const Details = () => {
           </div>
         </div>
       </div>
-      <div className="details-img">
-        <img src={pictureDetails?.image} alt="error-image" />
-
-        {isOpen && <div className="details-sidebar">123</div>}
+      <div className="details-box">
+        <div className="details-box-img">
+          <div
+            className={`${
+              sidebarStyle ? "details-img-active" : "details-img-noactive"
+            }`}
+          >
+            <img src={pictureDetails?.image} alt="error-image" />
+          </div>
+          {isOpen && (
+            <div className="details-sidebar">
+              <p>{pictureDetails?.descr}</p>
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
