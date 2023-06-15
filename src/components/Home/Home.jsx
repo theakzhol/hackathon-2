@@ -1,43 +1,31 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./home.css";
-import { useSelector } from "react-redux";
-import { ADMIN } from "../../helpers/consts";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { getPictures } from "../../store/pictures/picturesActions";
 
 const Home = () => {
   const { user } = useSelector((state) => state.auth);
+  const { pictures } = useSelector((state) => state.pictures);
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    dispatch(getPictures());
+  }, []);
+
   return (
     <div className="home-box">
-      <br />
-      <h1>Home</h1>
-      {user === ADMIN && <p>Welcome {user}</p>}
-      <br />
-      <br />
-      <br />
       <div className="img-box">
-        <img
-          src="https://dr.savee-cdn.com/things/thumbnails/6/4/877aa318a58514ac7e9886.webp"
-          alt="error-img"
-        />
-        <img
-          src="https://dr.savee-cdn.com/things/thumbnails/6/4/877aa318a58514ac7e9886.webp"
-          alt="error-img"
-        />
-        <img
-          src="https://dr.savee-cdn.com/things/thumbnails/6/4/877aa318a58514ac7e9886.webp"
-          alt="error-img"
-        />
-        <img
-          src="https://dr.savee-cdn.com/things/thumbnails/6/4/877aa318a58514ac7e9886.webp"
-          alt="error-img"
-        />
-        <img
-          src="https://dr.savee-cdn.com/things/thumbnails/6/4/877aa318a58514ac7e9886.webp"
-          alt="error-img"
-        />
-        <img
-          src="https://dr.savee-cdn.com/things/thumbnails/6/4/877aa318a58514ac7e9886.webp"
-          alt="error-img"
-        />
+        {pictures.map((item) => (
+          <img
+            src={item.image}
+            alt="error-img"
+            key={item.id}
+            onClick={() => navigate("/details/" + item.id)}
+          />
+        ))}
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { getOnePicture } from "./picturesActions";
 
 const initialState = {
   pictures: [],
@@ -12,6 +13,11 @@ export const pictureSlice = createSlice({
     setPicture(state, action) {
       state.pictures = action.payload;
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(getOnePicture.fulfilled, (state, action) => {
+      state.pictureDetails = action.payload;
+    });
   },
 });
 

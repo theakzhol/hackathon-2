@@ -31,7 +31,7 @@ const Navbar = () => {
           </li>
         </ul>
         <ul className="item-menu">
-          <li>
+          <li onClick={() => navigate("/search")}>
             <BsSearch />
           </li>
           <li>

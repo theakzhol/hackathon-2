@@ -22,11 +22,11 @@ const Create = () => {
         image,
       };
 
-      dispatch(addPicture(picturesObj))
-
-      setName('')
-      setDescr('')
-      setImage('')
+      dispatch(addPicture(picturesObj));
+      setName("");
+      setDescr("");
+      setImage("");
+      navigate("/");
     }
   }
 
