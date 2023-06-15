@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { getOnePicture } from "../../store/pictures/picturesActions";
 import "./details.css";
 import { VscChromeClose } from "react-icons/vsc";
+import EditButton from "../EditButton/EditButton";
 
 const Details = () => {
   const { pictureDetails } = useSelector((state) => state.pictures);
@@ -40,6 +41,9 @@ const Details = () => {
 
         {isOpen && <div className="details-sidebar">123</div>}
       </div>
+
+      <EditButton />
+
     </div>
   );
 };
