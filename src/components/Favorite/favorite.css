@@ -26,11 +26,11 @@
 }
 
 .img-box {
-  width: 90%;
+  width: 95%;
   display: flex;
   flex-wrap: wrap;
-  gap: 50px;
-  justify-content: space-between;
+  gap: 25px;
+  justify-content: space-evenly;
 }
 
 .img-box img {

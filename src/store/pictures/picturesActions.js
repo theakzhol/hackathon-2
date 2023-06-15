@@ -18,3 +18,11 @@ export const addPicture = createAsyncThunk(
     dispatch(getPictures());
   }
 );
+
+export const getOnePicture = createAsyncThunk(
+  "@pictures/getOnePicture",
+  async (id) => {
+    const { data } = await axios(`${API}/${id}`);
+    return data;
+  }
+);
