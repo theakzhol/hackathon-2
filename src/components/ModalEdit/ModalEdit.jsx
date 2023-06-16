@@ -38,7 +38,10 @@ const ModalEdit = ({ handleChange, openSidebar }) => {
       alert("Заполните Поля!");
       return;
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> a305771446e510ccaf3a91176afec3dbde46d2e7
     const editObj = {
       name,
       descr,
@@ -51,15 +54,21 @@ const ModalEdit = ({ handleChange, openSidebar }) => {
     setDescr("");
     setImage("");
 
+<<<<<<< HEAD
     navigate(`/details/${editObj.id}`);
     openSidebar();
     handleChange();
+=======
+    navigate("/");
+>>>>>>> a305771446e510ccaf3a91176afec3dbde46d2e7
   }
   useEffect(() => {
     dispatch(getPictures());
 
     console.log(1);
   }, []);
+
+
 
   return (
     <>

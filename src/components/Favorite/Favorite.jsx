@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./favorite.css";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { getPictures } from "../../store/pictures/picturesActions";
 
 const Favorite = () => {
+  const allData = Object.keys(localStorage);
+  const navigate = useNavigate();
+  const dispatch = useDispatch()
+
+
+  useEffect(() => {
+    dispatch(getPictures());
+  }, []);
+
   return (
     <div className="favorite-box">
       <div className="title-box">
@@ -12,22 +24,17 @@ const Favorite = () => {
         <p>search</p>
       </div>
       <div className="img-box">
-        <img
-          src="https://dr.savee-cdn.com/things/thumbnails/6/4/877aa318a58514ac7e9886.webp"
-          alt="error-img"
-        />
-        <img
-          src="https://dr.savee-cdn.com/things/thumbnails/6/4/877aa318a58514ac7e9886.webp"
-          alt="error-img"
-        />
-        <img
-          src="https://dr.savee-cdn.com/things/thumbnails/6/4/877aa318a58514ac7e9886.webp"
-          alt="error-img"
-        />
-        <img
-          src="https://dr.savee-cdn.com/things/thumbnails/6/4/877aa318a58514ac7e9886.webp"
-          alt="error-img"
-        />
+        {allData.map((item, index) => {
+          const obj = JSON.parse(localStorage.getItem(`${allData[index]}`));
+          return (
+            <img
+              src={`${obj.image}`}
+              alt="#"
+              key={index}
+              onClick={() => navigate("/details/" + index)}
+            />
+          );
+        })}
       </div>
     </div>
   );

@@ -20,13 +20,24 @@ const Details = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const [name, setName] = useState("");
+  const [descr, setDescr] = useState("");
+  const [image, setImage] = useState("");
+
   useEffect(() => {
     dispatch(getOnePicture(id));
   }, [id]);
 
   useEffect(() => {
+<<<<<<< HEAD
     dispatch(getPictures());
   }, [getOnePicture]);
+=======
+    setName(pictureDetails.name);
+    setDescr(pictureDetails.descr);
+    setImage(pictureDetails.image);
+  }, [pictureDetails]);
+>>>>>>> a305771446e510ccaf3a91176afec3dbde46d2e7
 
   const [isOpenSide, setIsOpenSide] = useState(false);
 
@@ -47,12 +58,21 @@ const Details = () => {
     setIsOpenModal(value);
   };
 
+  function handleLike() {
+    const likeObj = {
+      image,
+      id: pictureDetails.id
+    }
+
+    localStorage.setItem(`Like-${likeObj.id}`, JSON.stringify(likeObj))
+  }
+
   return (
     <div className="d-box">
       <div className={`${sidebarStyle ? "details-nav-active" : "details-nav"}`}>
         <p>Details</p>
         <div className="details-item">
-          {isOpenSide ? "" : <button className="details-save">SAVE</button>}
+          {isOpenSide ? "" : <button className="details-save" onClick={handleLike}>SAVE</button>}
           {isOpenSide ? (
             <button className="details-sidebar-open" onClick={openSidebar}>
               HIDE SIDEBAR
@@ -119,7 +139,10 @@ const Details = () => {
                 <div className="details-btns">
                   <button
                     className="details-save-side"
-                    onClick={() => navigate("/favorite")}
+                    onClick={() => {
+                      navigate("/");
+                      handleLike();
+                    }}
                   >
                     SAVE
                   </button>
