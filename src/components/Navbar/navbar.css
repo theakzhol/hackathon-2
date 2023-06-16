@@ -3,16 +3,16 @@ nav {
   height: 70px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .container {
-  width: 100%;
+  width: 90%;
   height: 70px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   gap: 50px;
-  padding: 0 100px 0 100px;
 }
 
 .container > ul {

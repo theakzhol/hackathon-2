@@ -18,3 +18,27 @@ export const addPicture = createAsyncThunk(
     dispatch(getPictures());
   }
 );
+
+export const getOnePicture = createAsyncThunk(
+  "@pictures/getOnePicture",
+  async (id) => {
+    const { data } = await axios(`${API}/${id}`);
+    return data;
+  }
+);
+
+export const editPictures = createAsyncThunk(
+  "@product/editPictures",
+  async (editedPictures, { dispatch }) => {
+    await axios.patch(`${API}/${editedPictures.id}`, editedPictures);
+    dispatch(getPictures());
+  }
+);
+
+export const deletePictures = createAsyncThunk(
+  "@pictures/deletePictures",
+  async (id, { dispatch }) => {
+    await axios.delete(`${API}/${id}`);
+    dispatch(getPictures());
+  }
+);
