@@ -49,3 +49,15 @@ input {
   font-size: 24px;
   padding-left: 80px;
 }
+
+.search-box-img {
+  background-color: #171717;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.search-box-img > img {
+  width: 30%;
+}

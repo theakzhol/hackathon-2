@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import {
   deletePictures,
   getOnePicture,
+  getPictures,
 } from "../../store/pictures/picturesActions";
 import "./details.css";
 import "./detailsSidebar";
@@ -23,6 +24,10 @@ const Details = () => {
     dispatch(getOnePicture(id));
   }, [id]);
 
+  useEffect(() => {
+    dispatch(getPictures());
+  }, [getOnePicture]);
+
   const [isOpenSide, setIsOpenSide] = useState(false);
 
   const openSidebar = () => {
@@ -36,7 +41,6 @@ const Details = () => {
 
   const openModal = () => {
     setIsOpenModal(!isOpenModal);
-    console.log(isOpenModal);
   };
 
   const handleChange = (value) => {
@@ -72,7 +76,14 @@ const Details = () => {
       <div className="details-box">
         <div className="details-box-img">
           <div className="modal-edit">
-            {isOpenModal ? <ModalEdit handleChange={handleChange} /> : ""}
+            {isOpenModal ? (
+              <ModalEdit
+                handleChange={handleChange}
+                openSidebar={openSidebar}
+              />
+            ) : (
+              ""
+            )}
           </div>
           <div
             className={`${

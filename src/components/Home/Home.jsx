@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { getPictures } from "../../store/pictures/picturesActions";
 
 const Home = () => {
-  const { user } = useSelector((state) => state.auth);
   const { pictures } = useSelector((state) => state.pictures);
 
   const dispatch = useDispatch();
@@ -15,10 +14,11 @@ const Home = () => {
     dispatch(getPictures());
   }, []);
 
+  console.log(1);
+
   return (
     <div className="home-box">
       <div className="img-box">
-        <p>hello</p>
         {pictures.map((item) => (
           <img
             src={item.image}

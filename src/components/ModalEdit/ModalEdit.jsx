@@ -5,9 +5,10 @@ import { useNavigate, useParams } from "react-router-dom";
 import {
   editPictures,
   getOnePicture,
+  getPictures,
 } from "../../store/pictures/picturesActions";
 
-const ModalEdit = ({ handleChange }) => {
+const ModalEdit = ({ handleChange, openSidebar }) => {
   const [name, setName] = useState("");
   const [descr, setDescr] = useState("");
   const [image, setImage] = useState("");
@@ -32,30 +33,39 @@ const ModalEdit = ({ handleChange }) => {
     setImage(pictureDetails.image);
   }, [pictureDetails]);
 
-  function handleEdit() {
+  async function handleEdit() {
     if (!name.trim() || !descr.trim() || !image.trim()) {
       alert("Заполните Поля!");
-    } else {
-      const editObj = {
-        name,
-        descr,
-        image,
-        id: pictureDetails.id,
-      };
-      dispatch(editPictures(editObj));
-
-      setName("");
-      setDescr("");
-      setImage("");
+      return;
     }
-    navigate("/");
+
+    const editObj = {
+      name,
+      descr,
+      image,
+      id: pictureDetails.id,
+    };
+    dispatch(editPictures(editObj));
+
+    setName("");
+    setDescr("");
+    setImage("");
+
+    navigate(`/details/${editObj.id}`);
+    openSidebar();
+    handleChange();
   }
+  useEffect(() => {
+    dispatch(getPictures());
+
+    console.log(1);
+  }, []);
 
   return (
     <>
       <div className="modal-box">
         <p>Edit</p>
-        <form>
+        <div className="form">
           <div className="edit-box">
             <input
               type="text"
@@ -77,7 +87,7 @@ const ModalEdit = ({ handleChange }) => {
             />
           </div>
           <div className="modal-btns">
-            <button onClick={() => handleEdit()}>
+            <button onClick={handleEdit}>
               <span></span>
               <span></span>
               <span></span>
@@ -92,36 +102,8 @@ const ModalEdit = ({ handleChange }) => {
               Cancel
             </button>
           </div>
-        </form>
-      </div>
-      {/* <div className="main">
-        <div className="mainBody">
-          <div className="inputBody">
-            <input
-              type="text"
-              placeholder="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-            <input
-              type="text"
-              placeholder="descr"
-              value={descr}
-              onChange={(e) => setDescr(e.target.value)}
-            />
-            <input
-              type="text"
-              placeholder="image"
-              value={image}
-              onChange={(e) => setImage(e.target.value)}
-            />
-            <div className="buttonBlock">
-              <button onClick={() => handleEdit()}>Save</button>
-              <button onClick={handleChange}>Close</button>
-            </div>
-          </div>
         </div>
-      </div> */}
+      </div>
     </>
   );
 };
