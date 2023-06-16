@@ -35,21 +35,24 @@ const ModalEdit = ({ handleChange }) => {
   function handleEdit() {
     if (!name.trim() || !descr.trim() || !image.trim()) {
       alert("Заполните Поля!");
-    } else {
-      const editObj = {
-        name,
-        descr,
-        image,
-        id: pictureDetails.id,
-      };
-      dispatch(editPictures(editObj));
-
-      setName("");
-      setDescr("");
-      setImage("");
+      return;
     }
+    const editObj = {
+      name,
+      descr,
+      image,
+      id: pictureDetails.id,
+    };
+    dispatch(editPictures(editObj));
+
+    setName("");
+    setDescr("");
+    setImage("");
+
     navigate("/");
   }
+
+
 
   return (
     <>

@@ -38,6 +38,7 @@
   width: 30%;
 }
 
+
 @media (max-width: 700px) {
   .title-box h1 {
     font-size: 80px; /* Уменьшаем размер текста при разрешении 700px */
@@ -55,3 +56,12 @@
     font-size: 40px; /* Уменьшаем размер текста при разрешении 700px */
   }
 }
+
+img:hover {
+  cursor: pointer;
+}
+
+.imageBlock{
+  display: flex;
+}
+

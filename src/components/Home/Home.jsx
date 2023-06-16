@@ -11,6 +11,8 @@ const Home = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  console.log(1);
+
   useEffect(() => {
     dispatch(getPictures());
   }, []);
