@@ -36,3 +36,11 @@
 .img-box img {
   width: 30%;
 }
+
+img:hover {
+  cursor: pointer;
+}
+
+.imageBlock{
+  display: flex;
+}
