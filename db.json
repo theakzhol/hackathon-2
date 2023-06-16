@@ -1,17 +1,6 @@
 {
   "pictures": [
     {
-<<<<<<< HEAD
-      "name": "11111",
-      "descr": "1111111",
-      "image": "https://dr.savee-cdn.com/things/thumbnails/6/4/877aa318a58514ac7e9886.webp",
-      "id": 1
-    },
-    {
-      "name": "111",
-      "descr": "222",
-      "image": "https://dr.savee-cdn.com/things/thumbnails/6/4/877aa318a58514ac7e9886.webp",
-=======
       "name": "SAIGAK",
       "descr": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis culpa, dignissimos illum in recusandae totam magni commodi adipisci perferendis, iusto dolore aut quas aspernatur sunt! Ullam illo harum quasi quibusdam, alias, quaerat impedit minima hic animi, sit enim in natus molestias sunt dolorem quisquam veniam fugit delectus architecto consequuntur nesciunt.",
       "image": "https://dr.savee-cdn.com/things/6/4/58f6687019d240662c0270.webp",
@@ -21,7 +10,6 @@
       "name": "SAIGAK",
       "descr": "sa qweqwe dollar qwe asd sit amet consectetur adipisicing elit. Nobis culpa, dignissimos illum in recusandae totam magni commodi adipisci perferendis, iusto dolore aut quas aspernatur sunt! Ullam illo harum quasi quibusdam, alias, quaerat impedit minima hic animi, sit enim in natus molestias sunt dolorem quisquam veniam fugit delectus architecto consequuntur nesciunt.",
       "image": "https://dr.savee-cdn.com/things/6/4/5f3c199d86a1f78b0b7530.webp",
->>>>>>> 45fcfb234055e4b35dbf6f7800cecb56d83e41f4
       "id": 2
     },
     {
