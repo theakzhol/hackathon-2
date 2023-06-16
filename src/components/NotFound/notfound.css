@@ -1,0 +1,12 @@
+.notfound-box {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.notfound-box > p {
+  font-size: 32px;
+}

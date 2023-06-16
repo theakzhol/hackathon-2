@@ -1,14 +1,14 @@
 import React from "react";
-import Favorite from "../components/Favorite/Favorite";
+import NotFound from "../components/NotFound/NotFound";
 import Navbar from "../components/Navbar/Navbar";
 
-const FavoritePage = () => {
+const NotFoundPage = () => {
   return (
     <div>
       <Navbar />
-      <Favorite />
+      <NotFound />
     </div>
   );
 };
 
-export default FavoritePage;
+export default NotFoundPage;
