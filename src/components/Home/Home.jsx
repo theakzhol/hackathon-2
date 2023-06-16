@@ -20,7 +20,6 @@ const Home = () => {
   return (
     <div className="home-box">
       <div className="img-box">
-        <p>hello</p>
         {pictures.map((item) => (
           <img
             src={item.image}
