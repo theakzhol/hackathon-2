@@ -3,10 +3,10 @@ import "./home.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getPictures } from "../../store/pictures/picturesActions";
+import Pagination from "../Search/Pagination";
 
 const Home = () => {
   const { pictures } = useSelector((state) => state.pictures);
-  console.log(pictures);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -14,45 +14,38 @@ const Home = () => {
     dispatch(getPictures());
   }, []);
 
-  const [page, setPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
+  const picturesPerPage = 20; // Количество изображений на одной странице
+  const totalPages = Math.ceil(pictures.length / picturesPerPage); // Общее количество страниц
+  const indexOfLastPicture = currentPage * picturesPerPage; // Индекс последнего изображения на текущей странице
+  const indexOfFirstPicture = indexOfLastPicture - picturesPerPage; // Индекс первого изображения на текущей странице
+  const currentPictures = pictures.slice(
+    indexOfFirstPicture,
+    indexOfLastPicture
+  ); // Изображения для текущей страницы
 
-  const picturesPage = 20;
-  const count = Math.ceil(pictures.length / picturesPage);
-
-  function currentPicture() {
-    const start = (page - 1) * picturesPage;
-    const end = start + picturesPage;
-    return pictures.slice(start, end);
-  }
-
-  const handleChange = (p) => {
-    setPage(p);
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber); // Обновление текущей страницы при переключении пагинации
   };
-
-  console.log(page, count);
 
   return (
     <div className="home-box">
       <div className="img-box">
-        {pictures ? (
-          currentPicture().map((item) => (
-            <img
-              src={item.image}
-              alt="error-img"
-              key={item.id}
-              onClick={() => navigate("/details/" + item.id)}
-            />
-          ))
-        ) : (
-          <></>
-        )}
+        {currentPictures.map((item) => (
+          <img
+            src={item.image}
+            alt="error-img"
+            key={item.id}
+            onClick={() => navigate("/details/" + item.id)}
+          />
+        ))}
       </div>
       <div className="pagination">
-        <div className="roman-pagination">
-          <button className="numeral" onClick={handleChange} page={page}>
-            {count}
-          </button>
-        </div>
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
+        />
       </div>
     </div>
   );
