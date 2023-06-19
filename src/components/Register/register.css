@@ -16,6 +16,10 @@
   gap: 50px;
 }
 
+.logo-login {
+  width: 30%;
+}
+
 .logo-box > p {
   font-size: 20px;
   color: #fdfdfd;
@@ -62,7 +66,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 20%;
+  width: 30%;
 }
 
 .register-way > p {
@@ -78,4 +82,76 @@
 
 .register-way > p:not(:hover) {
   transition-duration: 1s;
+}
+
+@media (max-width: 768px) {
+  .register-way > p {
+    font-size: 18px;
+  }
+
+  .register-inputs > input {
+    width: 35%;
+  }
+
+  .register-btn > button {
+    width: 35%;
+  }
+
+  .register-way {
+    width: 35%;
+  }
+}
+
+@media (max-width: 500px) {
+  .register-way > p {
+    font-size: 18px;
+  }
+
+  .register-inputs > input {
+    width: 50%;
+  }
+
+  .register-btn > button {
+    width: 50%;
+  }
+
+  .register-way {
+    width: 50%;
+  }
+}
+
+@media (max-width: 375px) {
+  .register-way > p {
+    font-size: 16px;
+  }
+
+  .register-inputs > input {
+    width: 55%;
+  }
+
+  .register-btn > button {
+    width: 55%;
+  }
+
+  .register-way {
+    width: 55%;
+  }
+}
+
+@media (max-width: 320px) {
+  .register-way > p {
+    font-size: 14px;
+  }
+
+  .register-inputs > input {
+    width: 55%;
+  }
+
+  .register-btn > button {
+    width: 55%;
+  }
+
+  .register-way {
+    width: 55%;
+  }
 }

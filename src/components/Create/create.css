@@ -5,6 +5,19 @@
   flex-direction: column;
 }
 
+.create-title-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 90%;
+  height: 60vh;
+}
+
+.create-title-box > h1 {
+  font-size: 100px;
+}
+
 .form-box {
   width: 90%;
   height: 100%;
@@ -44,4 +57,60 @@
   outline: none;
   background: #171717;
   border-radius: 25px;
+}
+
+@media (max-width: 768px) {
+  .create-title-box {
+    margin-top: 5rem;
+  }
+
+  .create-title-box > h1 {
+    font-size: 80px;
+  }
+
+  .form-box > input {
+    width: 30%;
+  }
+
+  .create-btns > button {
+    width: 15%;
+  }
+
+  .create-btns {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 500px) {
+  .create-title-box {
+    margin-top: 4rem;
+  }
+
+  .create-title-box > h1 {
+    font-size: 70px;
+  }
+
+  .form-box > input {
+    width: 55%;
+  }
+
+  .create-btns > button {
+    width: 27%;
+  }
+
+  .create-btns {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 375px) {
+  .create-title-box > h1 {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 320px) {
+  .create-title-box > h1 {
+    font-size: 50px;
+  }
 }

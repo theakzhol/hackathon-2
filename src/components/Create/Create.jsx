@@ -12,27 +12,29 @@ const Create = () => {
   const [descr, setDescr] = useState("");
   const [image, setImage] = useState("");
 
+  const [showError, setShowError] = useState(false);
+
   function handleCreate() {
     if (!name.trim() || !descr.trim() || !image.trim()) {
-      alert("Заполните Поля!");
-    } else {
-      let picturesObj = {
-        name,
-        descr,
-        image,
-      };
-
-      dispatch(addPicture(picturesObj));
-      setName("");
-      setDescr("");
-      setImage("");
-      navigate("/");
+      setShowError(true);
+      return;
     }
+    let picturesObj = {
+      name,
+      descr,
+      image,
+    };
+
+    dispatch(addPicture(picturesObj));
+    setName("");
+    setDescr("");
+    setImage("");
+    navigate("/");
   }
 
   return (
     <div className="create-box">
-      <div className="title-box">
+      <div className="create-title-box">
         <h1>Just create your image here</h1>
       </div>
       <div className="form-box">
@@ -54,6 +56,7 @@ const Create = () => {
           value={image}
           onChange={(e) => setImage(e.target.value)}
         />
+        {showError ? <p>Enter all inputs</p> : <></>}
       </div>
       <div className="create-btns">
         <button onClick={() => handleCreate()}>Create</button>

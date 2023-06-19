@@ -5,13 +5,10 @@ import { useNavigate } from "react-router-dom";
 import { getPictures } from "../../store/pictures/picturesActions";
 
 const Home = () => {
-  const { user } = useSelector((state) => state.auth);
   const { pictures } = useSelector((state) => state.pictures);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  console.log(1);
 
   useEffect(() => {
     dispatch(getPictures());

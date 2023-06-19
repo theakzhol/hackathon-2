@@ -28,7 +28,7 @@ export const getOnePicture = createAsyncThunk(
 );
 
 export const editPictures = createAsyncThunk(
-  "@product/editPictures",
+  "@pictureDetails/editPictures",
   async (editedPictures, { dispatch }) => {
     await axios.patch(`${API}/${editedPictures.id}`, editedPictures);
     dispatch(getPictures());

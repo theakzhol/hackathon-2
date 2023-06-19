@@ -4,9 +4,10 @@ import { useNavigate, useParams } from "react-router-dom";
 import {
   deletePictures,
   getOnePicture,
+  getPictures,
 } from "../../store/pictures/picturesActions";
 import "./details.css";
-import "./detailsSidebar";
+
 import { VscChromeClose } from "react-icons/vsc";
 import { IoIosArrowForward } from "react-icons/io";
 import { ADMIN } from "../../helpers/consts";
@@ -33,6 +34,10 @@ const Details = () => {
     setImage(pictureDetails.image);
   }, [pictureDetails]);
 
+  useEffect(() => {
+    dispatch(getPictures());
+  }, [id]);
+
   const [isOpenSide, setIsOpenSide] = useState(false);
 
   const openSidebar = () => {
@@ -46,7 +51,6 @@ const Details = () => {
 
   const openModal = () => {
     setIsOpenModal(!isOpenModal);
-    console.log(isOpenModal);
   };
 
   const handleChange = (value) => {
@@ -56,10 +60,10 @@ const Details = () => {
   function handleLike() {
     const likeObj = {
       image,
-      id: pictureDetails.id
-    }
+      id: pictureDetails.id,
+    };
 
-    localStorage.setItem(`Like-${likeObj.id}`, JSON.stringify(likeObj))
+    localStorage.setItem(`Like-${likeObj.id}`, JSON.stringify(likeObj));
   }
 
   return (
@@ -67,7 +71,13 @@ const Details = () => {
       <div className={`${sidebarStyle ? "details-nav-active" : "details-nav"}`}>
         <p>Details</p>
         <div className="details-item">
-          {isOpenSide ? "" : <button className="details-save" onClick={handleLike}>SAVE</button>}
+          {isOpenSide ? (
+            ""
+          ) : (
+            <button className="details-save" onClick={handleLike}>
+              SAVE
+            </button>
+          )}
           {isOpenSide ? (
             <button className="details-sidebar-open" onClick={openSidebar}>
               HIDE SIDEBAR
@@ -91,7 +101,14 @@ const Details = () => {
       <div className="details-box">
         <div className="details-box-img">
           <div className="modal-edit">
-            {isOpenModal ? <ModalEdit handleChange={handleChange} /> : ""}
+            {isOpenModal ? (
+              <ModalEdit
+                handleChange={handleChange}
+                openSidebar={openSidebar}
+              />
+            ) : (
+              ""
+            )}
           </div>
           <div
             className={`${
