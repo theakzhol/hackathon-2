@@ -15,17 +15,17 @@ const Home = () => {
   }, []);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const picturesPerPage = 20; // Количество изображений на одной странице
-  const totalPages = Math.ceil(pictures.length / picturesPerPage); // Общее количество страниц
-  const indexOfLastPicture = currentPage * picturesPerPage; // Индекс последнего изображения на текущей странице
-  const indexOfFirstPicture = indexOfLastPicture - picturesPerPage; // Индекс первого изображения на текущей странице
+  const picturesPerPage = 21;
+  const totalPages = Math.ceil(pictures.length / picturesPerPage);
+  const indexOfLastPicture = currentPage * picturesPerPage;
+  const indexOfFirstPicture = indexOfLastPicture - picturesPerPage;
   const currentPictures = pictures.slice(
     indexOfFirstPicture,
     indexOfLastPicture
-  ); // Изображения для текущей страницы
+  );
 
   const handlePageChange = (pageNumber) => {
-    setCurrentPage(pageNumber); // Обновление текущей страницы при переключении пагинации
+    setCurrentPage(pageNumber);
   };
 
   return (

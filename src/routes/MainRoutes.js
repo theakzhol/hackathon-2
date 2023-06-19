@@ -8,7 +8,7 @@ import FavoritePage from "../pages/FavoritePage";
 import SearchPage from "../pages/SearchPage";
 import PictureDetails from "../pages/PictureDetails";
 import NotFoundPage from "../pages/NotFoundPage";
-import AboutUs from "../components/AboutUs/AboutUs";
+import AboutUsPage from "../pages/AboutUsPage";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -20,7 +20,7 @@ const MainRoutes = () => {
     { link: "/search", element: <SearchPage />, id: 6 },
     { link: "/details/:id", element: <PictureDetails />, id: 7 },
     { link: "*", element: <NotFoundPage />, id: 8 },
-    { link: "/aboutus", element: <AboutUs />, id: 9 },
+    { link: "/aboutus", element: <AboutUsPage />, id: 9 },
   ];
   return (
     <>

@@ -2,9 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./navbar.css";
 import { useNavigate } from "react-router-dom";
 import { BsSearch } from "react-icons/bs";
-import { AiOutlineSelect } from "react-icons/ai";
 import { AiOutlinePlus } from "react-icons/ai";
-import { IoIosResize } from "react-icons/io";
 import { MdOutlineFavoriteBorder } from "react-icons/md";
 import { LuLogIn } from "react-icons/lu";
 import { LuLogOut } from "react-icons/lu";
@@ -13,6 +11,7 @@ import { ADMIN } from "../../helpers/consts";
 import { clearErrors, clearInputs } from "../../store/auth/authSlice";
 import { authFollower, handleLogout } from "../../store/auth/authActions";
 import { RiMenu3Fill, RiCloseFill } from "react-icons/ri";
+import { IoIosInformationCircleOutline } from "react-icons/io";
 
 const Navbar = () => {
   const { user } = useSelector((state) => state.auth);
@@ -44,11 +43,8 @@ const Navbar = () => {
             <li onClick={() => navigate("/search")}>
               <BsSearch />
             </li>
-            <li>
-              <AiOutlineSelect />
-            </li>
-            <li>
-              <IoIosResize />
+            <li onClick={() => navigate("/aboutus")}>
+              <IoIosInformationCircleOutline />
             </li>
             <li onClick={() => navigate("/favorite")}>
               <MdOutlineFavoriteBorder />

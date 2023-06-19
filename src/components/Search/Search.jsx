@@ -31,12 +31,7 @@ const Search = () => {
         />
       </div>
       <div className="rectangle-search">
-        <select name="" id="">
-          <option value="">Popular images</option>
-          <option value="">expensive images</option>
-          <option value="">Popular images</option>
-          <option value="">Popular images</option>
-        </select>
+        <p>Popular images</p>
       </div>
       <div className="home-box">
         <div className="search-box-img">

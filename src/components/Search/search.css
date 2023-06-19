@@ -43,7 +43,7 @@
 .rectangle-search > p {
   background: none;
   font-size: 24px;
-  padding-left: 80px;
+  padding-left: 20px;
 }
 
 .search-box-img {
@@ -89,6 +89,26 @@
 @media (max-width: 375px) {
   .search-inp::placeholder {
     font-size: 33px;
+  }
+  .rectangle-search > p {
+    background: none;
+    font-size: 24px;
+    padding-left: 20px;
+  }
+
+  .search-box-img {
+    display: flex;
+    justify-content: center;
+  }
+
+  .search-box-img > img {
+    width: 40%;
+  }
+}
+
+@media (max-width: 320px) {
+  .search-inp::placeholder {
+    font-size: 28px;
   }
   .rectangle-search > p {
     background: none;
