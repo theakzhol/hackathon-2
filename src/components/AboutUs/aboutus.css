@@ -1,67 +1,89 @@
-.kartinka {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 90%;
+.aboutus-container {
+  width: 100%;
   height: 100%;
-  text-align: center;
-}
-.kartinka > img {
-  width: 55%;
-  margin-left: 12%;
-  margin-top: 3%;
+  margin: 5rem 0 0 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
 }
 
-.text {
+.about-title {
+  width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
-  width: 90%;
-  height: 600px;
-  margin-bottom: 10%;
-  position: relative;
+  margin-bottom: 5rem;
 }
 
-.text > h1 {
-  text-align: center;
-  margin-bottom: 10%;
-  font-size: 45px;
-  text-align: left;
-  margin-left: 10%;
-}
-.text > h2 {
-  margin-right: 70%;
-  margin-bottom: 8%;
-  color: grey;
-  font-size: 15px;
-  margin-top: 2%;
-}
-.text > ul {
-  text-align: left;
-  margin-left: 9%;
-  list-style: none;
+.about-title > h1 {
+  font-size: 50px;
 }
 
-.mini-text {
-  position: absolute;
-  margin-top: 70%;
-  left: 0;
-  color: white;
-}
-.bot-block {
-  background-color: #171717;
-  padding: 100px;
-}
-.bot-block ul {
+.about-logo {
+  width: 40%;
   display: flex;
-  justify-content: space-between;
-  background: none;
-  margin-top: -50px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-direction: column;
 }
-.bot-block li {
-  background: none;
 
-  list-style: none;
+.about-logo > img {
+  width: 70%;
+}
+
+.about-image-main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-image-main > img {
+  width: 90%;
+}
+
+.about-text {
+  width: 55%;
+  margin: 2rem 0;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.about-image {
+  text-align: center;
+}
+
+.about-image > p {
+  color: #bbbaba;
+}
+
+.about-image > img {
+  width: 100%;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #171717;
+  height: 200px;
+  overflow: hidden;
+}
+
+.about-logo {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  gap: 10px;
+}
+
+.about-logo > p {
+  background: none;
 }

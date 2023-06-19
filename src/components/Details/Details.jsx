@@ -140,7 +140,7 @@ const Details = () => {
             <div className="details-sidebar">
               <div className="details-name">
                 <h3 className="side-details">{pictureDetails?.name}</h3>
-                <p className="side-details">{pictureDetails?.descr}</p>
+                <p className="side-details">{pictureDetails.descr}</p>
               </div>
               {user === ADMIN ? (
                 <div className="details-btns">
@@ -178,8 +178,10 @@ const Details = () => {
       </div>
       <div className="mainCommentBlock">
         <h1>Comments</h1>
-        <CommentForm onCommentSubmit={handleCommentSubmit} />
+        <br />
         <CommentList comments={comments} />
+        <hr />
+        <CommentForm onCommentSubmit={handleCommentSubmit} />
       </div>
     </div>
   );

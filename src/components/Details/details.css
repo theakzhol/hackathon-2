@@ -309,10 +309,15 @@
   }
 }
 
-
 .mainCommentBlock {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 7rem;
+}
+
+.mainCommentBlock > hr {
+  width: 35%;
+  margin-bottom: 1rem;
 }

@@ -116,7 +116,7 @@
     },
     {
       "name": "Palmiers",
-      "descr": "old car",
+      "descr": "old car.",
       "image": "https://dr.savee-cdn.com/things/6/4/526d8a2ca02da0464fa001.webp",
       "id": 20
     },
@@ -143,6 +143,12 @@
       "descr": "summer",
       "image": "https://dr.savee-cdn.com/things/6/3/dc11e428f719f56b3d7469.webp",
       "id": 24
+    },
+    {
+      "name": "Cover",
+      "descr": "PS Times",
+      "image": "https://dr.savee-cdn.com/things/6/4/84bdfb34035ac5a004d551.webp",
+      "id": 25
     }
   ]
 }
