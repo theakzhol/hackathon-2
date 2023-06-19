@@ -20,21 +20,6 @@ const Search = () => {
     item.name.toLowerCase().includes(value.toLowerCase())
   );
 
-  const [page, setPage] = useState(1);
-
-  const picturesPage = 20;
-  const count = Math.ceil(pictures.length / picturesPage);
-
-  function currentPicture() {
-    const start = (page - 1) * picturesPage;
-    const end = start + picturesPage;
-    return pictures.slice(start, end);
-  }
-  console.log(pictures);
-  const handleChange = (_, p) => {
-    setPage(p);
-  };
-
   return (
     <div className="container-search">
       <div className="search-box">
