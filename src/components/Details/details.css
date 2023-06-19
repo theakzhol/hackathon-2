@@ -1,5 +1,7 @@
 .d-box {
   overflow: hidden;
+  height: 100%;
+  width: 100%;
 }
 
 .details-box {
@@ -13,7 +15,7 @@
 }
 
 .details-nav {
-  width: 90%;
+  width: 100%;
   height: 70px;
   margin: 0 auto;
   display: flex;
@@ -115,12 +117,17 @@
 }
 
 .details-img-active {
-  width: 40%;
+  width: 67%;
   height: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 70px;
+  overflow: hidden;
+}
+
+.details-img-active > img {
+  width: 95%;
 }
 
 .details-img-noactive {
@@ -131,12 +138,17 @@
   margin-bottom: 70px;
 }
 
+.details-img-noactive > img {
+  width: 100%;
+}
+
 .details-box-img {
   display: flex;
+  width: 100%;
 }
 
 .details-sidebar {
-  width: 360px;
+  width: 30%;
   height: 95vh;
   background-color: #111;
   margin-left: 20px;
@@ -154,7 +166,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 300px;
+  width: 90%;
   height: 100%;
   margin: 3rem 0 0 0;
   background: none;
@@ -221,4 +233,78 @@
 
 .details-save-side-dlt:is(:hover, :focus)::after {
   transform: scale(1);
+}
+
+@media (max-width: 1440px) {
+  .details-nav-active {
+    width: 65%;
+    margin: 0 0 0 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .details-nav-active {
+    width: 65%;
+    margin: 0 0 0 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .details-sidebar {
+    width: 35%;
+  }
+
+  .details-img-active {
+    width: 63%;
+  }
+
+  .details-nav-active {
+    width: 60%;
+    margin: 0 0 0 20px;
+  }
+
+  .details-name > p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 500px) {
+  .details-sidebar {
+    width: 92%;
+    height: 90%;
+    position: absolute;
+  }
+
+  .details-img-active {
+    width: 100%;
+  }
+
+  .details-nav-active {
+    width: 90%;
+    margin: 0 20px 0 20px;
+  }
+
+  .details-name > p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 375px) {
+  .details-item {
+    width: 50%;
+  }
+
+  .details-sidebar {
+    width: 91%;
+  }
+}
+
+@media (max-width: 320px) {
+  .details-item {
+    width: 55%;
+  }
+
+  .details-sidebar {
+    width: 90%;
+  }
 }

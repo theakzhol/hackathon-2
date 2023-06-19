@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./favorite.css";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -7,8 +7,7 @@ import { getPictures } from "../../store/pictures/picturesActions";
 const Favorite = () => {
   const allData = Object.keys(localStorage);
   const navigate = useNavigate();
-  const dispatch = useDispatch()
-
+  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getPictures());
@@ -19,10 +18,7 @@ const Favorite = () => {
       <div className="title-box">
         <h1>Your favorite images here</h1>
       </div>
-      <div className="text-box">
-        <p>filter</p>
-        <p>search</p>
-      </div>
+
       <div className="img-box">
         {allData.map((item, index) => {
           const obj = JSON.parse(localStorage.getItem(`${allData[index]}`));
@@ -31,7 +27,7 @@ const Favorite = () => {
               src={`${obj.image}`}
               alt="#"
               key={index}
-              onClick={() => navigate("/details/" + index)}
+              onClick={() => navigate("/details/" + obj.id)}
             />
           );
         })}

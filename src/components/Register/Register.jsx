@@ -38,9 +38,13 @@ const Register = () => {
   return (
     <div className="box-register">
       <div className="logo-box">
-        <p onClick={() => navigate("/")} className="logo">
-          SAI <br /> GAK
-        </p>
+        <img
+          src={process.env.PUBLIC_URL + "/logo.png"}
+          alt="Logo"
+          className="logo-login"
+          onClick={() => navigate("/")}
+        />
+
         <p>Let's do this</p>
       </div>
       <div className="register-inputs">

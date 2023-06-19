@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { setEmail, setPassword } from "../../store/auth/authSlice";
+import {
+  clearErrors,
+  clearInputs,
+  setEmail,
+  setPassword,
+} from "../../store/auth/authSlice";
 import { handleLogin } from "../../store/auth/authActions";
 
 const Login = () => {
@@ -32,9 +37,12 @@ const Login = () => {
   return (
     <div className="box-register">
       <div className="logo-box">
-        <p onClick={() => navigate("/")} className="logo">
-          SAI <br /> GAK
-        </p>
+        <img
+          src={process.env.PUBLIC_URL + "/logo.png"}
+          alt="Logo"
+          className="logo-login"
+          onClick={() => navigate("/")}
+        />
         <p>Welcome back</p>
       </div>
       <div className="register-inputs">
@@ -75,7 +83,13 @@ const Login = () => {
         <button onClick={handleCreateUser}>Log in</button>
       </div>
       <div className="register-way">
-        <p onClick={() => navigate("/register")}>
+        <p
+          onClick={() => {
+            navigate("/register");
+            dispatch(clearInputs());
+            dispatch(clearErrors());
+          }}
+        >
           If you don't have account, then click registration
         </p>
       </div>

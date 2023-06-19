@@ -10,7 +10,7 @@ import { LuLogIn } from "react-icons/lu";
 import { LuLogOut } from "react-icons/lu";
 import { useDispatch, useSelector } from "react-redux";
 import { ADMIN } from "../../helpers/consts";
-import { clearInputs } from "../../store/auth/authSlice";
+import { clearErrors, clearInputs } from "../../store/auth/authSlice";
 import { authFollower, handleLogout } from "../../store/auth/authActions";
 import { RiMenu3Fill, RiCloseFill } from "react-icons/ri";
 
@@ -37,7 +37,7 @@ const Navbar = () => {
     <nav className={`navbar ${isMobile ? "mobile" : ""}`}>
       <div className="container">
         <div className="logo" onClick={() => navigate("/")}>
-          SAI <br /> GAK
+          <img src={process.env.PUBLIC_URL + "/logo.png"} alt="Logo" />
         </div>
         <div className="menu-container">
           <ul className={`item-menu ${isMenuOpen ? "open" : ""}`}>
@@ -62,21 +62,29 @@ const Navbar = () => {
               <li
                 onClick={() => {
                   navigate("/login");
-                  setIsMenuOpen(false); // Закрытие бургер-меню при переходе на страницу логина
+                  setIsMenuOpen(false);
                   dispatch(clearInputs());
+                  dispatch(clearErrors());
                 }}
               >
                 <LuLogIn />
               </li>
             )}
+
+            {user && (
+              <ul className="auth-menu">
+                <li
+                  onClick={() => {
+                    dispatch(handleLogout(navigate));
+                    dispatch(clearInputs());
+                    dispatch(clearErrors());
+                  }}
+                >
+                  <LuLogOut />
+                </li>
+              </ul>
+            )}
           </ul>
-          {user && (
-            <ul className="auth-menu">
-              <li onClick={() => dispatch(handleLogout(navigate))}>
-                <LuLogOut />
-              </li>
-            </ul>
-          )}
         </div>
         {isMobile && (
           <div

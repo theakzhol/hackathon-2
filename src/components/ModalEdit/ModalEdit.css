@@ -2,7 +2,7 @@
   position: fixed;
   top: 50%;
   left: 40%;
-  width: 400px;
+  width: 40%;
   padding: 40px;
   margin: 20px auto;
   transform: translate(-50%, -55%);
@@ -216,4 +216,40 @@
   background: transparent;
   color: #aaa;
   border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .modal-box {
+    z-index: 1;
+    width: 45%;
+    margin: 3rem 0 0 -3rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .modal-box {
+    z-index: 1;
+    width: 70%;
+    margin: 4rem 0 0 3rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .modal-box {
+    width: 75%;
+    margin: 4rem 0 0 2rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .modal-box {
+    width: 80%;
+    margin: 4rem 0 0 2rem;
+  }
+
+  .modal-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }

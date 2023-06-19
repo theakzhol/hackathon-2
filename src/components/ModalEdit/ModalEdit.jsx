@@ -23,6 +23,10 @@ const ModalEdit = ({ handleChange, openSidebar }) => {
     dispatch(getOnePicture(id));
   }, [id]);
 
+  useEffect(() => {
+    dispatch(getPictures());
+  }, []);
+
   const handleModalChange = () => {
     handleChange(false);
   };
@@ -38,10 +42,6 @@ const ModalEdit = ({ handleChange, openSidebar }) => {
       alert("Заполните Поля!");
       return;
     }
-<<<<<<< HEAD
-
-=======
->>>>>>> a305771446e510ccaf3a91176afec3dbde46d2e7
     const editObj = {
       name,
       descr,
@@ -54,21 +54,10 @@ const ModalEdit = ({ handleChange, openSidebar }) => {
     setDescr("");
     setImage("");
 
-<<<<<<< HEAD
     navigate(`/details/${editObj.id}`);
     openSidebar();
     handleChange();
-=======
-    navigate("/");
->>>>>>> a305771446e510ccaf3a91176afec3dbde46d2e7
   }
-  useEffect(() => {
-    dispatch(getPictures());
-
-    console.log(1);
-  }, []);
-
-
 
   return (
     <>
@@ -92,7 +81,7 @@ const ModalEdit = ({ handleChange, openSidebar }) => {
               type="text"
               placeholder="Description"
               value={image}
-              onChange={(e) => setDescr(e.target.value)}
+              onChange={(e) => setImage(e.target.value)}
             />
           </div>
           <div className="modal-btns">

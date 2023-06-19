@@ -32,7 +32,6 @@ export const editPictures = createAsyncThunk(
   async (editedPictures, { dispatch }) => {
     await axios.patch(`${API}/${editedPictures.id}`, editedPictures);
     dispatch(getPictures());
-    // dispatch(getOnePicture());
   }
 );
 

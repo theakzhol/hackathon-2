@@ -10,13 +10,9 @@ const Home = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  console.log(1);
-
   useEffect(() => {
     dispatch(getPictures());
   }, []);
-
-  console.log(1);
 
   return (
     <div className="home-box">

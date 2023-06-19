@@ -7,7 +7,7 @@ import {
   getPictures,
 } from "../../store/pictures/picturesActions";
 import "./details.css";
-import "./detailsSidebar";
+
 import { VscChromeClose } from "react-icons/vsc";
 import { IoIosArrowForward } from "react-icons/io";
 import { ADMIN } from "../../helpers/consts";
@@ -29,15 +29,14 @@ const Details = () => {
   }, [id]);
 
   useEffect(() => {
-<<<<<<< HEAD
-    dispatch(getPictures());
-  }, [getOnePicture]);
-=======
     setName(pictureDetails.name);
     setDescr(pictureDetails.descr);
     setImage(pictureDetails.image);
   }, [pictureDetails]);
->>>>>>> a305771446e510ccaf3a91176afec3dbde46d2e7
+
+  useEffect(() => {
+    dispatch(getPictures());
+  }, [id]);
 
   const [isOpenSide, setIsOpenSide] = useState(false);
 
@@ -61,10 +60,10 @@ const Details = () => {
   function handleLike() {
     const likeObj = {
       image,
-      id: pictureDetails.id
-    }
+      id: pictureDetails.id,
+    };
 
-    localStorage.setItem(`Like-${likeObj.id}`, JSON.stringify(likeObj))
+    localStorage.setItem(`Like-${likeObj.id}`, JSON.stringify(likeObj));
   }
 
   return (
@@ -72,7 +71,13 @@ const Details = () => {
       <div className={`${sidebarStyle ? "details-nav-active" : "details-nav"}`}>
         <p>Details</p>
         <div className="details-item">
-          {isOpenSide ? "" : <button className="details-save" onClick={handleLike}>SAVE</button>}
+          {isOpenSide ? (
+            ""
+          ) : (
+            <button className="details-save" onClick={handleLike}>
+              SAVE
+            </button>
+          )}
           {isOpenSide ? (
             <button className="details-sidebar-open" onClick={openSidebar}>
               HIDE SIDEBAR
