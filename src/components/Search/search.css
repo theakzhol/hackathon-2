@@ -61,41 +61,6 @@
   width: 30%;
 }
 
-.pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: none;
-}
-
-.roman-pagination {
-  width: 100%;
-  background: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.roman-radio {
-  margin: 0 8px;
-  background: none;
-}
-
-.roman-radio > span {
-  background: none;
-}
-
-input[type="radio"] {
-  display: none;
-}
-input[type="radio"]:checked ~ span {
-  color: white;
-}
-input[type="radio"]:checked ~ .title {
-  display: inline;
-  margin-left: 0;
-}
-
 .title {
   display: none;
   margin-left: -16px;
