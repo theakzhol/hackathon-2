@@ -1,0 +1,19 @@
+.formBlock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.formBlock input {
+    margin: 20px 0;
+}
+
+.formBlock textarea {
+    margin-bottom: 20px;
+}
+
+.formBlock button {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+}

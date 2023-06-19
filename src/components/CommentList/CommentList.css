@@ -1,0 +1,11 @@
+.commentList {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.commentListItem {
+    width: 30%;
+}
