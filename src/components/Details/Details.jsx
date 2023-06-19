@@ -12,6 +12,8 @@ import { VscChromeClose } from "react-icons/vsc";
 import { IoIosArrowForward } from "react-icons/io";
 import { ADMIN } from "../../helpers/consts";
 import ModalEdit from "../ModalEdit/ModalEdit";
+import CommentForm from "../CommentForm/CommentForm";
+import CommentList from "../CommentList/CommentList";
 
 const Details = () => {
   const { pictureDetails } = useSelector((state) => state.pictures);
@@ -65,6 +67,23 @@ const Details = () => {
 
     localStorage.setItem(`Like-${likeObj.id}`, JSON.stringify(likeObj));
   }
+
+  const [comments, setComments] = useState([]);
+
+  useEffect(() => {
+    const savedComments = localStorage.getItem("comments");
+    if (savedComments) {
+      setComments(JSON.parse(savedComments));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("comments", JSON.stringify(comments));
+  }, [comments]);
+
+  const handleCommentSubmit = (comment) => {
+    setComments([...comments, comment]);
+  };
 
   return (
     <div className="d-box">
@@ -156,6 +175,11 @@ const Details = () => {
             </div>
           )}
         </div>
+      </div>
+      <div className="mainCommentBlock">
+        <h1>Comments</h1>
+        <CommentForm onCommentSubmit={handleCommentSubmit} />
+        <CommentList comments={comments} />
       </div>
     </div>
   );

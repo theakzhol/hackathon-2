@@ -308,3 +308,11 @@
     width: 90%;
   }
 }
+
+
+.mainCommentBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
