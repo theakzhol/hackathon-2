@@ -33,7 +33,7 @@ const Search = () => {
       <div className="rectangle-search">
         <select name="" id="">
           <option value="">Popular images</option>
-          <option value="">Popular images</option>
+          <option value="">expensive images</option>
           <option value="">Popular images</option>
           <option value="">Popular images</option>
         </select>
