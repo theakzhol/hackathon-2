@@ -79,7 +79,7 @@ const ModalEdit = ({ handleChange, openSidebar }) => {
             />
             <input
               type="text"
-              placeholder="Description"
+              placeholder="Image"
               value={image}
               onChange={(e) => setImage(e.target.value)}
             />
