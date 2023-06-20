@@ -54,7 +54,7 @@ const ModalEdit = ({ handleChange, openSidebar }) => {
     setDescr("");
     setImage("");
 
-    navigate(`/details/${editObj.id}`);
+    navigate("/");
     openSidebar();
     handleChange();
   }
