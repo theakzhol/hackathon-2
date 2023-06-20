@@ -22,14 +22,17 @@ const Favorite = () => {
       <div className="img-box">
         {allData.map((item, index) => {
           const obj = JSON.parse(localStorage.getItem(`${allData[index]}`));
-          return (
-            <img
-              src={`${obj.image}`}
-              alt="#"
-              key={index}
-              onClick={() => navigate("/details/" + obj.id)}
-            />
-          );
+          if (obj && obj.image) {
+            return (
+              <img
+                src={`${obj.image}`}
+                alt="#"
+                key={index}
+                onClick={() => navigate("/details/" + obj.id)}
+              />
+            );
+          }
+          return null;
         })}
       </div>
     </div>

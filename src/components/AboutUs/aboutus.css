@@ -82,8 +82,12 @@ footer {
   align-items: center;
   background: none;
   gap: 10px;
+  background: none;
 }
 
 .about-logo > p {
+  background: none;
+}
+.about-logo > img {
   background: none;
 }
