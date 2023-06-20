@@ -12,7 +12,7 @@ const AboutUs = () => {
         </div>
 
         <div className="about-logo" onClick={() => navigate("/")}>
-          <img src={process.env.PUBLIC_URL + "/logo.png"} alt="Logo" />
+          <img src={process.env.PUBLIC_URL + "/logo-notbg.png"} alt="Logo" />
           <p>May 20, 2023</p>
         </div>
 
@@ -24,9 +24,9 @@ const AboutUs = () => {
         </div>
 
         <div className="about-text">
-          A big part of our experience on SAVEE is focused on how fast the site
+          A big part of our experience on SAKTA is focused on how fast the site
           can load and how good it looks, and I think this is why so many users
-          love it. When you hit savee.it, it loads fast! That's by design.
+          love it. When you hit sakta.it, it loads fast! That's by design.
           Providing our users with a simple and beautiful place in a crowded
           World has always been top of mind for us. Every new feature we
           implement is focused on performance and how our users can find any
@@ -36,14 +36,12 @@ const AboutUs = () => {
           without ads and tracking, because we believe our users should be able
           to explore creativity and culture without being sold something they
           are not interested in or having their data collected without their
-          consent, and that's why we charge a subscription. Our feed is curated
-          by humans, always with an eye on the World and culture, with relevant
-          and up-to-date inspiration and we are constantly improving and
-          listening to feedback from our main ambassadors, our users. We have
-          always had a "pirate's mindset", like we ask for forgiveness, not for
-          permission. And I thought this photo of Steve I saved recently from
-          the book LoveFrom (Jony Ive design studio) just published this week
-          it's a great reminder to keep pushing.
+          consent. Our feed is curated by humans, always with an eye on the
+          World and culture, with relevant and up-to-date inspiration and we are
+          constantly improving and listening to feedback from our main
+          ambassadors, our users. And I thought this photo of Steve I saved
+          recently from the book LoveFrom (Jony Ive design studio) just
+          published this week it's a great reminder to keep pushing.
         </div>
 
         <div className="about-image">
@@ -66,16 +64,14 @@ const AboutUs = () => {
           This article is part of a new series that where share our journey as
           immigrants and independent founders! If you're looking for a platform
           that truly cares about providing the best possible experience, then
-          SAVEE is the right place for you. Join the movement by upgrading your
-          account. We rely on our users each month to continue inspiring and
-          growing our community. It costs $1.50 a week and that's less than a
-          good coffee depending on where you live. Let's continue to save, share
-          and inspire each other together. Dre Founder SAVEE
+          SAVEE is the right place for you. Join the movement by creating your
+          account. Let's continue to sakta, share and inspire each other
+          together. Mr Akzhol, Mr Vlad and Mr Islam The founders SAKTA
         </div>
 
         <footer>
           <div className="about-logo" onClick={() => navigate("/")}>
-            <img src={process.env.PUBLIC_URL + "/logo.png"} alt="Logo" />
+            <img src={process.env.PUBLIC_URL + "/logo-notbg.png"} alt="Logo" />
             <p>May 20, 2023</p>
             <p>Inspire ©</p>
           </div>
